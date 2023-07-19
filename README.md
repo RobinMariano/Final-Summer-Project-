@@ -33,7 +33,7 @@ The application will let the administrator store different recipes within the sy
 ```
 5. You can search and view the added recipes
 ```
-
+![searchbar](https://github.com/RobinMariano/Final-Summer-Project-/blob/main/361682341_644428500947662_7245793782473610865_n.png)
 
 <h2>  &nbsp; Development Tools Used</h2>
 <p align="left">
