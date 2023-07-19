@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="header">Recipe Available</ion-title>
+    <ion-searchbar placeholder="Search..." id="searchbar" class="search-bar" (ionInput)="handleInput($event)">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="addNewRecipe()" class="add-recipe-button">+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="body-background" scrollEvents="true" [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">ingredientInfo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

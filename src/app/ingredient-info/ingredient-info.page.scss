@@ -1,0 +1,34 @@
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cc791b;
+}
+
+.search-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.search-bar {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.search-results {
+  margin-top: 10px;
+  max-height: 150px; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Enable vertical scrolling if necessary */
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#addNew {
+  border: none;
+}
+.body-background { --background: url('/assets/img/user.png') no-repeat center center fixed; background-size: cover; }

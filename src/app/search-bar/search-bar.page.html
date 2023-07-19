@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="header-toolbar">
+    <ion-title class="big-title">FOODFUSION</ion-title>
+    <div class="logo-container"></div>
+    <ion-buttons slot="end">
+      <ion-button class="add-recipe-button" (click)="addNewRecipe()">Add New Recipe</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body-background" [fullscreen]="true">
+  <div id="container">
+    <div class="search__container">
+      <p class="search__title">FoodFusion</p>
+      <input class="search__input" type="text" placeholder="Search ingredients here.." [(ngModel)]="searchTerm"
+        (input)="searchRecipes()">
+    </div>
+    <ion-list class="search-results" *ngIf="searchResults.length > 0">
+      <ion-item  *ngFor="let result of searchResults" >
+        <ion-label>
+          <h2>{{ result.recipeName }}</h2>
+          <p class="subtext">{{ result.ingredients ? result.ingredients.join(', ') : '' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
