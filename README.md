@@ -29,7 +29,11 @@ The application will let the administrator store different recipes within the sy
 ```
 4. Input the needed recipe details on their corresponding text area.
 ```
-![addpage](https://github.com/RobinMariano/foodfusion/blob/master/Untitled.png)
+![addpage](https://github.com/RobinMariano/Final-Summer-Project-/blob/main/361825786_295263319689851_4344789462695201524_n.png)
+```
+5. You can search and view the added recipes
+```
+
 
 <h2>  &nbsp; Development Tools Used</h2>
 <p align="left">
