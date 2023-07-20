@@ -1,5 +1,5 @@
 <p>
-    <img src="https://github.com/RobinMariano/foodfusion/blob/main/FoodFusion-modified.png" class="logo" width="90" height="90" align="right" >
+    <img src="https://github.com/RobinMariano/Final-Summer-Project-/blob/main/FoodFusion-modified.png" class="logo" width="90" height="90" align="right" >
 </p>
 
 
