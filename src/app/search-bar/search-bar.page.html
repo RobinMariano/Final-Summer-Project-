@@ -15,8 +15,8 @@
       <input class="search__input" type="text" placeholder="Search ingredients here.." [(ngModel)]="searchTerm"
         (input)="searchRecipes()">
     </div>
-    <ion-list class="search-results" *ngIf="searchResults.length > 0">
-      <ion-item  *ngFor="let result of searchResults" >
+    <ion-list class="search-results" *ngIf="searchResults && searchResults.length > 0">
+      <ion-item *ngFor="let result of searchResults">
         <ion-label>
           <h2>{{ result.recipeName }}</h2>
           <p class="subtext">{{ result.ingredients ? result.ingredients.join(', ') : '' }}</p>

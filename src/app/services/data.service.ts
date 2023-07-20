@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, getDocs, query, where } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, getDocs, query } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,7 @@ export class DataService {
     console.log('Search term:', searchTerm);
   
     const ingredients = searchTerm.toLowerCase().split(',').map(ingredient => ingredient.trim());
+    const recipeNameSearchTerm = searchTerm.toLowerCase().trim();
   
     const recipesRef = collection(this.firestore, 'recipes');
     const querySnapshot = await getDocs(recipesRef);
@@ -26,7 +27,10 @@ export class DataService {
       const recipeIngredients = doc.data()['ingredients'].map((ingredient: string) => ingredient.toLowerCase());
       const hasAllIngredients = ingredients.every(ingredient => recipeIngredients.includes(ingredient));
       
-      if (hasAllIngredients) {
+      const recipeName = doc.data()['recipeName'].toLowerCase();
+      const matchesRecipeName = recipeName.includes(recipeNameSearchTerm);
+      
+      if (hasAllIngredients || matchesRecipeName) {
         const recipeData = {
           recipeName: doc.data()['recipeName'],
           // Include other desired properties from doc.data() here
@@ -34,6 +38,12 @@ export class DataService {
         results.push(recipeData);
       }
     });
+
+    // Check if the searchTerm is empty or contains only whitespace
+    if (!searchTerm || searchTerm.trim() === '') {
+      console.log('Search results:', []);
+      return []; // Return an empty array when the search bar is empty or contains only whitespace
+    }
   
     console.log('Search results:', results);
     return results;

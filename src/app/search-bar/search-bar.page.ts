@@ -16,14 +16,12 @@ export class SearchBarPage {
 
   constructor(private router: Router, private dataService: DataService) {}
 
-  searchRecipes() {
-    this.dataService.searchRecipes(this.searchTerm)
-      .then((results: any[]) => {
-        this.searchResults = results;
-      })
-      .catch((error: any) => {
-        console.error('Error searching recipes:', error);
-      });
+  async searchRecipes() {
+    if (!this.searchTerm || this.searchTerm.trim() === '') {
+      this.searchResults = []; // Clear the search results when searchTerm is empty or contains only whitespace
+    } else {
+      this.searchResults = await this.dataService.searchRecipes(this.searchTerm);
+    }
   }
 
   addNewRecipe() {
